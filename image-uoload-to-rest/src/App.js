@@ -16,9 +16,10 @@ class App extends React.Component {
     console.log(...fd)
   }
   render() {
-    return(
+    return (
       <div className="App">
-        <input style={{display: 'none'}} type="file" onChange={this.fileSelectedHandler}/>
+        <input style={{ display: 'none' }} type="file" onChange={this.fileSelectedHandler} ref={fileInput => this.fileInput = fileInput} />
+        <button onClick={() => this.fileInput.click()}>Pick File</button>
         <button type="submit" onClick={this.fileUploadHandler}>Submit</button>
       </div>
     );
